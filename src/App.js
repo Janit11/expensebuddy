@@ -1,40 +1,52 @@
 import React from "react";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
+import { FaHome, FaListAlt, FaSignInAlt } from 'react-icons/fa'; // Importing icons from react-icons
 
-
-// NavBar component
 const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="logo">ExpenseBuddy</div>
       <div className="menu-items">
-        <a href="/">Dashboard</a>
-        <a href="/expenses">Expenses</a>
-        <a href="/login">Login</a>
+        <a href="/login"><FaSignInAlt /> Login</a>
       </div>
     </nav>
   );
 };
 
-// Card component for displaying dashboard statistics
-const StatCard = ({ icon, label, value }) => {
+
+const ActivityBar = ({ currentActivity }) => {
   return (
-    <div className="stat-card">
-      <div className="icon">{icon}</div>
-      <div className="label">{label}</div>
-      <div className="value">{value}</div>
+    <div className="activity-bar">
+      <span>{currentActivity}</span>
     </div>
   );
 };
 
-// Dashboard component
+
+// Card component for displaying dashboard statistics
+const StatCard = ({ icon, label, value, onClick }) => {
+  return (
+    <button onClick={onClick} className="stat-card">
+      <div className="icon">{icon}</div>
+      <div className="label">{label}</div>
+      <div className="value">{value}</div>
+    </button>
+  );
+};
+
 const Dashboard = () => {
+  // Function to handle clicks on stat cards
+  const handleStatCardClick = (label) => {
+    console.log(`${label} card clicked`);
+    // Here you can handle navigation or modal pop-up based on the label
+  };
+
   // Dummy data for demonstration
   const stats = [
-    { label: "Total Expenses", value: "$2,190" },
-    { label: "Income", value: "$3,000" },
-    { label: "Savings", value: "$810" },
+    { icon: <FaHome />, label: "Total Money", value: "$3,000", onClick: () => handleStatCardClick("Total Money") }, 
+    { icon: <FaListAlt />, label: "Manage Money", value: "Transfer/Remove Money", onClick: () => handleStatCardClick("Manage Money") }, // customer can manage money and make a list on where to spend using categories/note.
+    { icon: <FaSignInAlt />, label: "Expense List", value: "5 transactions", onClick: () => handleStatCardClick("Expense List") }, // add and reset transaction list
   ];
 
   return (
@@ -43,8 +55,10 @@ const Dashboard = () => {
         {stats.map((stat) => (
           <StatCard
             key={stat.label}
+            icon={stat.icon}
             label={stat.label}
             value={stat.value}
+            onClick={stat.onClick}
           />
         ))}
       </div>
@@ -103,14 +117,32 @@ const Login = () => {
 // Main App component
 const App = () => {
   return (
-    <div className="app">
-      <NavBar />
-      <main>
-        <Dashboard />
-        <ExpenseList />
-        {/* Routes for other components */}
-      </main>
-    </div>
+    <Router>
+      <div className="app">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <ActivityBar currentActivity="Dashboard" />
+              <Dashboard />
+            </>
+          } />
+          <Route path="/expenses" element={
+            <>
+              <ActivityBar currentActivity="Expenses" />
+              <ExpenseList />
+            </>
+          } />
+          <Route path="/login" element={
+            <>
+              <ActivityBar currentActivity="Login" />
+              <Login />
+            </>
+          } />
+          {/* Add other routes here */}
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
