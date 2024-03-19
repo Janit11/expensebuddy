@@ -44,41 +44,48 @@
   font-size: 18px;
 }
 
-.dashboard {
-  display: flex; /* Use flexbox to align children */
-  justify-content: center; /* Center children horizontally */
-  align-items: center; /* Center children vertically */
-  flex-direction: column; /* Stack children vertically */
-  min-height: 100vh; /* Ensure the dashboard takes up at least the height of the viewport */
-}
-
 .stats {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
-  justify-content: center; /* Center cards horizontally */
-  gap: 2rem; /* Add space between cards */
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center children horizontally */
+  justify-content: flex-start; /* Align children to the start vertically */
+  gap: 2rem; /* Space between cards */
+  width: 100%; /* Full width */
+  padding: 1rem; /* Padding around the stat cards container */
 }
 
 .stat-card {
-  flex: 0 1 calc(33.333% - 4rem); 
-  align-items: center;
-  justify-content: center;
-  width: 25%; 
-  border:5px solid #ccc;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* You can also use max-width to constrain card size */
+  padding: 2rem; /* Inner padding of the card */
+  margin-bottom: 2rem; /* Space below each card */
+  box-sizing: border-box; /* Include padding and border in the width */
+  border: 5px solid #ccc;
   border-radius: 20px;
-  padding: 6rem;
-  margin: 2rem;
   background-color: #f9f9f9;
   color: black;
   cursor: pointer;
-  text-align:  center;
+  text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
 .stat-card:hover {
   background-color: #e9e9e9;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Adjusting the dashboard class to allow for scroll if content overflows the viewport height */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem; /* Padding on the top/bottom, and left/right */
+  overflow:auto; /* Enables scrolling if content overflows */
+}
+
 
 
 .expense-list table {

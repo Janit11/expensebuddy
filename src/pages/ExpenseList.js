@@ -10,4 +10,4 @@ const ExpenseList = async () => {
   };
   
 
-  export default ExpenseList;
+  export default ExpenseList; 
