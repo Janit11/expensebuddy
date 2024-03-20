@@ -3,7 +3,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const ExpenseList = () => {
-  const [expenses, setExpenses] = useState([]);
+// Initialize the 'expenses' state with dummy data
+  const [expenses, setExpenses] = useState([
+    { date: "2024-01-01", description: "Groceries", category: "Food", amount: "$50" },
+    { date: "2024-01-02", description: "Internet", category: "Utility", amount: "$60" },
+    // ...other dummy data
+  ]);
+
 
   useEffect(() => {
     const fetchExpenses = async () => {

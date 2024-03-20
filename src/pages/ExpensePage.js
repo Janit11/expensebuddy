@@ -1,17 +1,17 @@
-// src/pages/ExpenseListPage.js
+// src/pages/ExpensePage.js
 import React from 'react';
-import { NavBar } from './components/NavBar';
+import {NavBar} from '../components/NavBar';
 import ActivityBar from '../components/ActivityBar';
 import ExpenseList from '../components/ExpenseList';
 
-const ExpenseListPage = () => {
+const ExpensePage = () => {
   return (
     <>
       <NavBar />
-      <ActivityBar currentActivity="Expense List" />
+      <ActivityBar currentActivity="Expenses" />
       <ExpenseList />
     </>
   );
 };
 
-export default ExpenseListPage;
+export default ExpensePage;
