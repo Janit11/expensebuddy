@@ -1,30 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import { FaHome, FaListAlt, FaSignInAlt } from 'react-icons/fa'; // Importing icons from react-icons
-
-const NavBar = () => {
-  return (
-    <nav className="navbar">
-      <div className="logo">ExpenseBuddy</div>
-      <div className="menu-items">
-        <a href="/login"><FaSignInAlt /> Login</a>
-      </div>
-    </nav>
-  );
-};
+import { NavBar } from './components/NavBar';
+import ActivityBar from './components/ActivityBar';
+import ExpenseList from './ExpenseList'; 
+import Login from './Login'; 
+import ExpensePage from './pages/ExpensePage';
 
 
-const ActivityBar = ({ currentActivity }) => {
-  return (
-    <div className="activity-bar">
-      <span>{currentActivity}</span>
-    </div>
-  );
-};
-
-
-// Card component for displaying dashboard statistics
 const StatCard = ({ icon, label, value, onClick }) => {
   return (
     <button onClick={onClick} className="stat-card">
@@ -66,53 +49,6 @@ const Dashboard = () => {
   );
 };
 
-// ExpenseList component
-const ExpenseList = () => {
-  // Dummy data for demonstration
-  const expenses = [
-    { date: "2024-03-15", description: "Groceries", category: "Food", amount: "$50" },
-    // ... other expenses
-  ];
-
-  return (
-    <div className="expense-list">
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {expenses.map((expense) => (
-            <tr key={expense.description}>
-              <td>{expense.date}</td>
-              <td>{expense.description}</td>
-              <td>{expense.category}</td>
-              <td>{expense.amount}</td>
-              <td>
-                <button>Edit</button>
-                <button>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-// Login component
-const Login = () => {
-  return (
-    <div className="login-form">
-      {/* Form elements go here */}
-    </div>
-  );
-};
 
 // Main App component
 const App = () => {
@@ -139,7 +75,7 @@ const App = () => {
               <Login />
             </>
           } />
-          {/* Add other routes here */}
+          <Route path="/expenses" element={<ExpensePage />} />
         </Routes>
       </div>
     </Router>
