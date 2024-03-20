@@ -5,22 +5,29 @@ import axios from 'axios';
 const ExpenseList = () => {
 // Initialize the 'expenses' state with dummy data
   const [expenses, setExpenses] = useState([
-    { date: "2024-01-01", description: "Groceries", category: "Food", amount: "$50" },
-    { date: "2024-01-02", description: "Internet", category: "Utility", amount: "$60" },
+    { id: 1, date: "2024-01-01", description: "Groceries", category: "Food", amount: "$50" },
+    { id: 2, date: "2024-01-02", description: "Internet", category: "Utility", amount: "$60" },
     // ...other dummy data
   ]);
 
-
   useEffect(() => {
-    const fetchExpenses = async () => {
-      try {
-        const response = await axios.get(`/api/expenses`);
-        setExpenses(response.data);
-      } catch (error) {
-        console.error("Error fetching expenses", error);
-      }
-    };
-    fetchExpenses();
+    // const fetchExpenses = async () => {
+    //   try {
+    //     const response = await axios.get(`/api/expenses`);
+    //     // Check if response.data is an array before setting expenses
+    //     if (Array.isArray(response.data)) {
+    //       setExpenses(response.data);
+    //     } else {
+    //       // Handle the case where the data is not an array
+    //       console.error('Data fetched is not an array:', response.data);
+    //       setExpenses([]); // Reset expenses to an empty array
+    //     }
+    //   } catch (error) {
+    //     console.error("Error fetching expenses", error);
+    //     setExpenses([]); // Reset expenses to an empty array in case of error
+    //   }
+    // };
+    // fetchExpenses();
   }, []);
 
   return (
@@ -36,8 +43,8 @@ const ExpenseList = () => {
           </tr>
         </thead>
         <tbody>
-          {expenses.map((expense, index) => (
-            <tr key={index}>
+          {expenses.map((expense) => (
+            <tr key={expense.id}> {/* Replace index with a unique identifier */}
               <td>{expense.date}</td>
               <td>{expense.description}</td>
               <td>{expense.category}</td>

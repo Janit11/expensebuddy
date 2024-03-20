@@ -7,7 +7,7 @@ import ExpenseList from '../components/ExpenseList';
 const ExpensePage = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <ActivityBar currentActivity="Expenses" />
       <ExpenseList />
     </>
