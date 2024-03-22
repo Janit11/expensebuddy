@@ -1,6 +1,5 @@
-// src/components/ActivityBar.js
 import React from 'react';
-import '../App.css'; // Import the CSS if needed in ActivityBar
+import '../App.css';
 
 const ActivityBar = ({ currentActivity }) => {
   return (

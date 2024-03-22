@@ -1,4 +1,3 @@
-// src/Dashboard.js
 import React from 'react';
 import { FaHome, FaListAlt, FaSignInAlt } from 'react-icons/fa';
 import StatCard from './StatCard';

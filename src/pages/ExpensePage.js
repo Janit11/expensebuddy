@@ -1,4 +1,3 @@
-// src/pages/ExpensePage.js
 import React from 'react';
 import ActivityBar from '../components/ActivityBar';
 import ExpenseList from '../components/ExpenseList';
