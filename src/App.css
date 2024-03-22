@@ -119,3 +119,27 @@ textarea {
 }
 
 /* make the content more adjustable for different screen sizes and change the interface */
+
+.total-money-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.total-money-box {
+  border: 2px solid #6871cf;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.total-amount {
+  font-size: 2em;
+  font-weight: bold;
+  color: #6871cf;
+}

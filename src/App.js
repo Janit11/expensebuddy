@@ -7,6 +7,7 @@ import ActivityBar from './components/ActivityBar';
 import Dashboard from './components/Dashboard'; 
 import ExpensePage from './pages/ExpensePage'; 
 import ManageMoneyPage from './pages/ManageMoneyPage';
+import TotalMoneyPage from './pages/TotalMoneyPage';
 import Login from './components/Login'; 
 // Main App component
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           } />
           <Route path="/expenses" element={<ExpensePage />} />
           <Route path="/manage-money" element={<ManageMoneyPage />} />
+          <Route path="/total-money" element={<TotalMoneyPage />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
