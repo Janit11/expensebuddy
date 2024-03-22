@@ -102,4 +102,20 @@ button {
   margin-right: 5px;
 }
 
+.manage-money {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.categories-section, .notes-section {
+  margin-bottom: 1rem;
+}
+
+/* Style for your text area */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.5rem;
+}
 /* Add more styles as needed */

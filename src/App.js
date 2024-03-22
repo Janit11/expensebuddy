@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import {NavBar} from './components/NavBar';
 import ActivityBar from './components/ActivityBar';
-import Dashboard from './components/Dashboard'; // Adjust this import if necessary
-import ExpensePage from './pages/ExpensePage'; // Adjust this import if necessary
-import Login from './components/Login'; // Adjust this import if necessary
-
+import Dashboard from './components/Dashboard'; 
+import ExpensePage from './pages/ExpensePage'; 
+import ManageMoneyPage from './pages/ManageMoneyPage';
+import Login from './components/Login'; 
 // Main App component
 const App = () => {
   return (
@@ -28,6 +28,7 @@ const App = () => {
             </>
           } />
           <Route path="/expenses" element={<ExpensePage />} />
+          <Route path="/manage-money" element={<ManageMoneyPage />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
