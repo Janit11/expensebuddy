@@ -38,28 +38,26 @@
   color: #333;
 }
 
-
-/* Additional styling */
 .activity-bar span {
   font-size: 18px;
 }
 
 .stats {
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
-  align-items: center; /* Center children horizontally */
-  justify-content: flex-start; /* Align children to the start vertically */
-  gap: 2rem; /* Space between cards */
-  width: 100%; /* Full width */
-  padding: 1rem; /* Padding around the stat cards container */
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 2rem;
+  width: 100%; 
+  padding: 1rem; 
 }
 
 .stat-card {
-  width: 80%; /* Adjust the width as needed */
-  max-width: 600px; /* You can also use max-width to constrain card size */
-  padding: 2rem; /* Inner padding of the card */
-  margin-bottom: 2rem; /* Space below each card */
-  box-sizing: border-box; /* Include padding and border in the width */
+  width: 80%;
+  max-width: 600px; 
+  padding: 2rem; 
+  margin-bottom: 2rem;
+  box-sizing: border-box; 
   border: 5px solid #ccc;
   border-radius: 20px;
   background-color: #f9f9f9;
@@ -67,7 +65,7 @@
   cursor: pointer;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  transition: all 0.3s ease-in-out; 
 }
 
 .stat-card:hover {
@@ -75,15 +73,14 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Adjusting the dashboard class to allow for scroll if content overflows the viewport height */
 .dashboard {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  padding: 2rem 1rem; /* Padding on the top/bottom, and left/right */
-  overflow:auto; /* Enables scrolling if content overflows */
+  padding: 2rem 1rem;
+  overflow:auto;
 }
 
 
@@ -118,8 +115,6 @@ textarea {
   padding: 0.5rem;
 }
 
-/* make the content more adjustable for different screen sizes and change the interface */
-
 .total-money-container {
   display: flex;
   justify-content: center;
@@ -142,4 +137,21 @@ textarea {
   font-size: 2em;
   font-weight: bold;
   color: #6871cf;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 20px; 
+}
+
+.back-button:focus {
+  outline: none;
+}
+
+.back-button:hover {
+  opacity: 0.8;
 }
