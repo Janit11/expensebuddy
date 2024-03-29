@@ -9,6 +9,10 @@ const TotalMoney = () => {
           <h1>Total Money</h1>
           <p className="total-amount">{totalAmount}</p>
         </div>
+        <div className="add-remove-money">
+          <h1>Add/Remove Money</h1>
+          <p className="add-remove"></p>
+        </div>
       </div>
   );
 };

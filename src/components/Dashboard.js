@@ -6,8 +6,8 @@ const Dashboard = () => {
   // Dummy data for demonstration
   const stats = [
     { icon: <FaHome />, label: "Total Money", value: "$3,000", to: "/total-money" },
-    { icon: <FaListAlt />, label: "Manage Money", value: "Transfer/Remove Money", to: "/manage-money" },
-    { icon: <FaSignInAlt />, label: "Expense List", value: "5 transactions", to: "/expenses" },
+    { icon: <FaListAlt />, label: "Manage Money", value: "See how you spend", to: "/manage-money" },
+    { icon: <FaSignInAlt />, label: "Expense List", value: "2 transactions", to: "/expenses" },
   ];
 
   return (
