@@ -99,21 +99,47 @@ button {
   margin-right: 5px;
 }
 
+/* src/App.css */
 .manage-money {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 1rem;
 }
 
-.categories-section, .notes-section {
-  margin-bottom: 1rem;
+.total-budget-section {
+  margin-bottom: 2rem;
+}
+
+.categories-section {
+  margin-bottom: 2rem;
+}
+
+.notes-section {
+  margin-bottom: 2rem;
 }
 
 textarea {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   padding: 0.5rem;
 }
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
 
 .total-money-container {
   display: flex;
